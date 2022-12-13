@@ -1,0 +1,48 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\Debug\Capstone_Project.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Capstone_Project.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Capstone_Project.map</FILE>
+  <FILE>Capstone_Project.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>55</LINE></main>
+  <Button_up><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>14</LINE></Button_up>
+  <Button_down><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>22</LINE></Button_down>
+  <game_over><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>31</LINE></game_over>
+  <delay_ms><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>401</LINE></delay_ms>
+  <command_wrt><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>224</LINE></command_wrt>
+  <data_wrt><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>245</LINE></data_wrt>
+  <delay_seconds><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>408</LINE></delay_seconds>
+  <LCD_init><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>111</LINE></LCD_init>
+  <Stall><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>83</LINE></Stall>
+  <disp_start><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>266</LINE></disp_start>
+  <again><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>94</LINE></again>
+  <update_screen><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>347</LINE></update_screen>
+  <l1><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>101</LINE></l1>
+  <delay_short><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>389</LINE></delay_short>
+  <delay_us><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>394</LINE></delay_us>
+  <l2><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>342</LINE></l2>
+  <l3><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>396</LINE></l3>
+  <l4><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>403</LINE></l4>
+  <l5><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>410</LINE></l5>
+  <l6><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>411</LINE></l6>
+  <l7><FILE>c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm</FILE><LINE>412</LINE></l7>
+ </LABELS>
+</ASSEMBLER_INFO>
