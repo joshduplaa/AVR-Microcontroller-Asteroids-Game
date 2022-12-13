@@ -1,0 +1,39 @@
+ 
+.def temp = r16 
+.def temp2 = r17 
+.org 0
+
+        jmp     reset
+        jmp     chg_btn         
+chg_btn:
+        sbic    PIND,PD2
+        rjmp    b_set
+        cbi     PORTB,PB1
+        reti
+b_set:  sbi     PORTB,PB1
+        reti
+;Start of program
+reset:
+        ldi     temp,high(RAMEND)
+        out     SPH,temp
+        ldi     temp,low(RAMEND)
+        out     SPL,temp                ;stack init required for interrupts
+        sbi     EIMSK,INT0              ;enable int0
+        lds     temp,EICRA
+        sbr     temp,ISC00
+        sts     EICRA,temp              ;set external interrupt control register to interrupt change
+        sei                             ;set global interrupt
+        sbi     PORTD,PD2               ;set pullup on button pin 
+        ldi     temp,0xff
+        out     DDRB,temp               ;set led's active
+.equ d_cnt = 50000
+loop:
+        ldi     r24,low(d_cnt)
+        ldi     r25,high(d_cnt)
+delay:  sbiw    r25:r24,1
+        brne    delay
+        in      temp,PORTB
+        ldi     temp2,0b00000001
+        eor     temp,temp2
+        out     PORTB,temp
+        rjmp    loop
