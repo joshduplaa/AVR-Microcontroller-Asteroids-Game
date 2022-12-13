@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm Tue Dec 13 11:06:42 2022
+AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm Tue Dec 13 11:26:51 2022
 
 
 EQU  SIGNATURE_000 0000001e
@@ -699,21 +699,23 @@ CSEG main         0000003c
 CSEG Button_up    00000006
 CSEG Button_down  0000000d
 CSEG game_over    00000025
-CSEG delay_ms     0000017b
+CSEG delay_ms     00000181
 CSEG command_wrt  000000dc
 CSEG data_wrt     000000ee
-CSEG delay_seconds 00000180
+CSEG delay_seconds 00000186
 CSEG LCD_init     0000006d
 CSEG Stall        00000056
 CSEG disp_start   00000100
 CSEG again        00000060
-CSEG update_screen 0000014c
+CSEG update_screen 0000014d
 CSEG l1           00000066
-CSEG delay_short  00000173
-CSEG delay_us     00000176
+CSEG delay_short  00000179
+CSEG delay_us     0000017c
 CSEG l2           00000148
-CSEG l3           00000177
-CSEG l4           0000017c
-CSEG l5           00000181
-CSEG l6           00000182
-CSEG l7           00000183
+CSEG game_overcall 0000014c
+CSEG pass         00000154
+CSEG l3           0000017d
+CSEG l4           00000182
+CSEG l5           00000187
+CSEG l6           00000188
+CSEG l7           00000189

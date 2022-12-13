@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm Tue Dec 13 11:06:42 2022
+AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Capstone_Project\main.asm Tue Dec 13 11:26:51 2022
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
@@ -1003,7 +1003,7 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 000008 f0e1                      	  BREQ game_over
 000009 956a                      	  DEC R22
 00000a 956a                      	  DEC R22
-00000b d16f                      	  RCALL delay_ms
+00000b d175                      	  RCALL delay_ms
 00000c 9518                      	  RETI
                                  Button_down:
 00000d 95f3                      	  INC R31
@@ -1011,7 +1011,7 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 00000f f0a9                      	  BREQ game_over
 000010 9563                      	  INC R22
 000011 9563                      	  INC R22
-000012 d168                      	  RCALL delay_ms
+000012 d16e                      	  RCALL delay_ms
 000013 9518                      	  RETI
                                  .ORG $25
                                  game_over:
@@ -1035,8 +1035,8 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 000036 d0b7                      	  RCALL data_wrt
 000037 e502                      	  LDI R16, 'R'
 000038 d0b5                      	  RCALL data_wrt
-000039 d146                      	  RCALL delay_seconds
-00003a d145                      	  RCALL delay_seconds
+000039 d14c                      	  RCALL delay_seconds
+00003a d14b                      	  RCALL delay_seconds
 00003b dfe9                      	  RCAll game_over
                                  main:
 00003c e270                      	  LDI	R23, ' '
@@ -1059,7 +1059,7 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 00004e e003                      	  LDI R16, (1<<INT0)|(1<<INT1)
 00004f bb0d                      	  OUT EIMSK, R16
 000050 9478                      	  SEI
-000051 d129                            RCALL delay_ms          ;wait for LCD power on
+000051 d12f                            RCALL delay_ms          ;wait for LCD power on
                                        ;-----------------------------------------------------
 000052 d01a                            RCALL LCD_init          ;subroutine to initialize LCD
                                        ;-----------------------------------------------------
@@ -1074,17 +1074,17 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 00005a d093                      	  RCALL data_wrt
 00005b d092                      	  RCALL data_wrt
 00005c d091                      	  RCALL data_wrt
-00005d d122                      	  RCALL delay_seconds
+00005d d128                      	  RCALL delay_seconds
 00005e 30f0                      	  CPI R31,0
 00005f f3b1                      	  BREQ Stall
                                  again:
 000060 70f7                      	  ANDI R31, 0x07
 000061 60f1                      	  ORI R31, 0x01
-000062 d0e9                      	  RCALL update_screen      
+000062 d0ea                      	  RCALL update_screen      
                                        ;-----------------------------------------------------
 000063 9100 0100                 	  LDS R16, $100
 000065 e012                            LDI R17, 2            ;wait 1 second
-000066 d119                      l1:   RCALL delay_seconds
+000066 d11f                      l1:   RCALL delay_seconds
 000067 951a                            DEC R17
 000068 f7e9                            BRNE l1
 000069 9503                      	  INC R16
@@ -1097,18 +1097,18 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
                                  LCD_init:
 00006d e303                            LDI R16, 0x33         ;init LCD for 4-bit data
 00006e d06d                            RCALL command_wrt       ;send to command register
-00006f d10b                            RCALL delay_ms
+00006f d111                            RCALL delay_ms
 000070 e302                            LDI R16, 0x32         ;init LCD for 4-bit data
 000071 d06a                            RCALL command_wrt
-000072 d108                            RCALL delay_ms
+000072 d10e                            RCALL delay_ms
 000073 e208                            LDI R16, 0x28         ;LCD 2 lines, 5x7 matrix
 000074 d067                            RCALL command_wrt
-000075 d105                            RCALL delay_ms
+000075 d10b                            RCALL delay_ms
 000076 e00c                            LDI R16, 0x0C         ;disp ON, cursor OFF
 000077 d064                            RCALL command_wrt
 000078 e001                            LDI R16, 0x01         ;clear LCD
 000079 d062                            RCALL command_wrt
-00007a d100                            RCALL delay_ms
+00007a d106                            RCALL delay_ms
 00007b e006                            LDI R16, 0x06         ;shift cursor right
 00007c d05f                            RCALL command_wrt
 00007d e400                      	  LDI R16, 0x40			;command for creation
@@ -1208,45 +1208,45 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 0000db 9508                            RET  
                                  ;================================================================
                                  command_wrt:
-0000dc d09e                            RCALL delay_ms
+0000dc d0a4                            RCALL delay_ms
 0000dd 2f20                            MOV   R18, R16
 0000de 7f20                            ANDI  R18, 0xF0         ;mask low nibble & keep high nibble
 0000df b92b                            OUT   PORTD, R18        ;o/p high nibble to port D
 0000e0 9829                            CBI   PORTB, 1          ;RS = 0 for command
 0000e1 9a28                            SBI   PORTB, 0          ;EN = 1
-0000e2 d090                            RCALL delay_short       ;widen EN pulse
+0000e2 d096                            RCALL delay_short       ;widen EN pulse
 0000e3 9828                            CBI   PORTB, 0          ;EN = 0 for H-to-L pulse
-0000e4 d091                            RCALL delay_us          ;delay in micro seconds
+0000e4 d097                            RCALL delay_us          ;delay in micro seconds
                                        ;----------------------------------------------------
 0000e5 2f20                            MOV   R18, R16
 0000e6 9522                            SWAP  R18               ;swap nibbles
 0000e7 7f20                            ANDI  R18, 0xF0         ;mask low nibble & keep high nibble
 0000e8 b92b                            OUT   PORTD, R18       ;o/p high nibble to port D
 0000e9 9a28                            SBI   PORTB, 0          ;EN = 1
-0000ea d088                            RCALL delay_short       ;widen EN pulse
+0000ea d08e                            RCALL delay_short       ;widen EN pulse
 0000eb 9828                            CBI   PORTB, 0          ;EN = 0 for H-to-L pulse
-0000ec d089                            RCALL delay_us          ;delay in micro seconds
+0000ec d08f                            RCALL delay_us          ;delay in micro seconds
 0000ed 9508                            RET
                                  ;================================================================
                                  data_wrt:
-0000ee d08c                      	  RCALL delay_ms
+0000ee d092                      	  RCALL delay_ms
 0000ef 2f20                            MOV   R18, R16
 0000f0 7f20                            ANDI  R18, 0xF0         ;mask low nibble & keep high nibble
 0000f1 b92b                            OUT   PORTD, R18       ;o/p high nibble to port D
 0000f2 9a29                            SBI   PORTB, 1          ;RS = 1 for data
 0000f3 9a28                            SBI   PORTB, 0          ;EN = 1
-0000f4 d07e                            RCALL delay_short       ;make wide EN pulse
+0000f4 d084                            RCALL delay_short       ;make wide EN pulse
 0000f5 9828                            CBI   PORTB, 0          ;EN = 0 for H-to-L pulse
-0000f6 d07f                            RCALL delay_us          ;delay in micro seconds
+0000f6 d085                            RCALL delay_us          ;delay in micro seconds
                                        ;----------------------------------------------------
 0000f7 2f20                            MOV   R18, R16
 0000f8 9522                            SWAP  R18               ;swap nibbles
 0000f9 7f20                            ANDI  R18, 0xF0         ;mask low nibble & keep high nibble
 0000fa b92b                            OUT   PORTD, R18        ;o/p high nibble to port D
 0000fb 9a28                            SBI   PORTB, 0          ;EN = 1
-0000fc d076                            RCALL delay_short       ;widen EN pulse
+0000fc d07c                            RCALL delay_short       ;widen EN pulse
 0000fd 9828                            CBI   PORTB, 0          ;EN = 0 for H-to-L pulse
-0000fe d077                            RCALL delay_us          ;delay in micro seconds
+0000fe d07d                            RCALL delay_us          ;delay in micro seconds
 0000ff 9508                            RET
                                  ;================================================================
                                  disp_start:
@@ -1314,94 +1314,103 @@ AVRASM ver. 2.2.8  c:\users\conne\Documents\Atmel Studio\7.0\Capstone_Project\Ca
 00013b dfb2                            RCALL data_wrt
 00013c e709                            LDI   R16, 'y'
 00013d dfb0                            RCALL data_wrt
-00013e d041                      	  RCALL delay_seconds
+00013e d047                      	  RCALL delay_seconds
 00013f e20e                            LDI   R16, '.'
 000140 dfad                            RCALL data_wrt
-000141 d03e                      	  RCALL delay_seconds
+000141 d044                      	  RCALL delay_seconds
 000142 e20e                      	  LDI   R16, '.'
 000143 dfaa                            RCALL data_wrt
-000144 d03b                      	  RCALL delay_seconds
+000144 d041                      	  RCALL delay_seconds
 000145 e20e                      	  LDI   R16, '.'
 000146 dfa7                            RCALL data_wrt
                                        ;----------------
 000147 e014                            LDI   R17, 4           ;wait 2 seconds
-000148 d037                      l2:   RCALL delay_seconds
+000148 d03d                      l2:   RCALL delay_seconds
 000149 951a                            DEC   R17
 00014a f7e9                            BRNE  l2
 00014b 9508                            RET
                                  ;================================================================
+                                 game_overcall:
+00014c ded8                      	  RCALL game_over
+                                 ;================================================================
                                  update_screen:
-00014c ec00                      	  LDI   R16, 0xC0         ;cursor beginning of 2nd line
-00014d df8e                            RCALL command_wrt
-00014e ef0f                      	  LDI R16, 0xFF
-00014f df9e                      	  RCALL data_wrt
-000150 df9d                      	  RCALL data_wrt
-000151 df9c                      	  RCALL data_wrt
-000152 df9b                      	  RCALL data_wrt
-000153 df9a                      	  RCALL data_wrt
-000154 df99                      	  RCALL data_wrt
-000155 2f06                      	  MOV R16, R22
+00014d ec00                      	  LDI   R16, 0xC0         ;cursor beginning of 2nd line
+00014e df8d                            RCALL command_wrt
+00014f 3270                      	  CPI R23, ' '
+000150 f019                      	  BREQ pass
+000151 957a                      	  DEC R23
+000152 1767                      	  CP R22, R23
+000153 f7c1                      	  BRNE game_overcall
+                                 pass:
+000154 ef0f                      	  LDI R16, 0xFF
+000155 df98                      	  RCALL data_wrt
 000156 df97                      	  RCALL data_wrt
-000157 2f78                      	  MOV R23, R24
-000158 2f89                      	  MOV R24, R25
-000159 2f9a                      	  MOV R25, R26
-00015a 2fab                      	  MOV R26, R27
-00015b 2fbc                      	  MOV R27, R28
-00015c 2fcd                      	  MOV R28, R29
-00015d 2fde                      	  MOV R29, R30
-00015e 2fef                      	  MOV R30, R31
+000157 df96                      	  RCALL data_wrt
+000158 df95                      	  RCALL data_wrt
+000159 df94                      	  RCALL data_wrt
+00015a df93                      	  RCALL data_wrt
+00015b 2f06                      	  MOV R16, R22
+00015c df91                      	  RCALL data_wrt
+00015d 2f78                      	  MOV R23, R24
+00015e 2f89                      	  MOV R24, R25
+00015f 2f9a                      	  MOV R25, R26
+000160 2fab                      	  MOV R26, R27
+000161 2fbc                      	  MOV R27, R28
+000162 2fcd                      	  MOV R28, R29
+000163 2fde                      	  MOV R29, R30
+000164 2fef                      	  MOV R30, R31
                                  
-00015f 2f07                      	  MOV R16, R23
-000160 df8d                      	  RCALL data_wrt
-000161 2f08                      	  MOV R16, R24
-000162 df8b                      	  RCALL data_wrt
-000163 2f09                      	  MOV R16, R25
-000164 df89                      	  RCALL data_wrt
-000165 2f0a                      	  MOV R16, R26
+000165 2f07                      	  MOV R16, R23
 000166 df87                      	  RCALL data_wrt
-000167 2f0b                      	  MOV R16, R27
+000167 2f08                      	  MOV R16, R24
 000168 df85                      	  RCALL data_wrt
-000169 2f0c                      	  MOV R16, R28
+000169 2f09                      	  MOV R16, R25
 00016a df83                      	  RCALL data_wrt
-00016b 2f0d                      	  MOV R16, R29
+00016b 2f0a                      	  MOV R16, R26
 00016c df81                      	  RCALL data_wrt
-00016d 2f0e                      	  MOV R16, R30
+00016d 2f0b                      	  MOV R16, R27
 00016e df7f                      	  RCALL data_wrt
-00016f 2f0f                      	  MOV R16, R31
+00016f 2f0c                      	  MOV R16, R28
 000170 df7d                      	  RCALL data_wrt
-000171 d00e                      	  RCALL delay_seconds
-000172 9508                      	  RET
+000171 2f0d                      	  MOV R16, R29
+000172 df7b                      	  RCALL data_wrt
+000173 2f0e                      	  MOV R16, R30
+000174 df79                      	  RCALL data_wrt
+000175 2f0f                      	  MOV R16, R31
+000176 df77                      	  RCALL data_wrt
+000177 d00e                      	  RCALL delay_seconds
+000178 9508                      	  RET
                                  ;================================================================
                                  delay_short:
-000173 0000                            NOP
-000174 0000                            NOP
-000175 9508                            RET
+000179 0000                            NOP
+00017a 0000                            NOP
+00017b 9508                            RET
                                  ;------------------------
                                  delay_us:
-000176 e54a                            LDI   R20, 90
-000177 dffb                      l3:   RCALL delay_short
-000178 954a                            DEC   R20
-000179 f7e9                            BRNE  l3
-00017a 9508                            RET
+00017c e54a                            LDI   R20, 90
+00017d dffb                      l3:   RCALL delay_short
+00017e 954a                            DEC   R20
+00017f f7e9                            BRNE  l3
+000180 9508                            RET
                                  ;-----------------------
                                  delay_ms:
-00017b e258                            LDI   R21, 40
-00017c dff9                      l4:   RCALL delay_us
-00017d 955a                            DEC   R21
-00017e f7e9                            BRNE  l4
-00017f 9508                            RET
+000181 e258                            LDI   R21, 40
+000182 dff9                      l4:   RCALL delay_us
+000183 955a                            DEC   R21
+000184 f7e9                            BRNE  l4
+000185 9508                            RET
                                  ;================================================================
                                  delay_seconds:
-000180 ef3f                          LDI   R19, 255    ;outer loop counter 
-000181 ef4f                      l5: LDI   R20, 255    ;mid loop counter
-000182 e154                      l6: LDI   R21, 20     ;inner loop counter to give 0.25s delay
-000183 955a                      l7: DEC   R21         ;decrement inner loop
-000184 f7f1                          BRNE  l7          ;loop if not zero
-000185 954a                          DEC   R20         ;decrement mid loop
-000186 f7d9                          BRNE  l6          ;loop if not zero
-000187 953a                          DEC   R19         ;decrement outer loop
-000188 f7c1                          BRNE  l5          ;loop if not zero
-000189 9508                          RET               ;return to caller
+000186 ef3f                          LDI   R19, 255    ;outer loop counter 
+000187 ef4f                      l5: LDI   R20, 255    ;mid loop counter
+000188 e154                      l6: LDI   R21, 20     ;inner loop counter to give 0.25s delay
+000189 955a                      l7: DEC   R21         ;decrement inner loop
+00018a f7f1                          BRNE  l7          ;loop if not zero
+00018b 954a                          DEC   R20         ;decrement mid loop
+00018c f7d9                          BRNE  l6          ;loop if not zero
+00018d 953a                          DEC   R19         ;decrement outer loop
+00018e f7c1                          BRNE  l5          ;loop if not zero
+00018f 9508                          RET               ;return to caller
 
 
 RESOURCE USE INFORMATION
@@ -1422,36 +1431,36 @@ counted separately from r26..r31 here.
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
 r13:   0 r14:   0 r15:   0 r16: 108 r17:   4 r18:  14 r19:   2 r20:   4 
-r21:   4 r22:   8 r23:   3 r24:   4 r25:   4 r26:   4 r27:   4 r28:   4 
+r21:   4 r22:   9 r23:   6 r24:   4 r25:   4 r26:   4 r27:   4 r28:   4 
 r29:   4 r30:   4 r31:   8 
 Registers used: 16 out of 35 (45.7%)
 
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   5 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   7 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   8 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   8 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   3 cpse  :   0 dec   :   9 eor   :   0 fmul  :   0 fmuls :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 
+cpi   :   4 cpse  :   0 dec   :  10 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   5 jmp   :   3 
 ld    :   0 ldd   :   0 ldi   : 104 lds   :   1 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :  22 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   2 or    :   0 ori   :   1 out   :   7 pop   :   0 
-push  :   0 rcall : 169 ret   :   9 reti  :   2 rjmp  :   1 rol   :   0 
+push  :   0 rcall : 170 ret   :   9 reti  :   2 rjmp  :   1 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   5 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   2 
 sub   :   0 subi  :   0 swap  :   2 tst   :   0 wdr   :   0 
-Instructions used: 22 out of 113 (19.5%)
+Instructions used: 23 out of 113 (20.4%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000314    754      0    754   32768   2.3%
+[.cseg] 0x000000 0x000320    766      0    766   32768   2.3%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

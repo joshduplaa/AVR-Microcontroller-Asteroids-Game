@@ -344,9 +344,18 @@ l2:   RCALL delay_seconds
       BRNE  l2
       RET
 ;================================================================
+game_overcall:
+	  RCALL game_over
+;================================================================
 update_screen:
 	  LDI   R16, 0xC0         ;cursor beginning of 2nd line
       RCALL command_wrt
+	  CPI R23, ' '
+	  BREQ pass
+	  DEC R23
+	  CP R22, R23
+	  BRNE game_overcall
+pass:
 	  LDI R16, 0xFF
 	  RCALL data_wrt
 	  RCALL data_wrt
